@@ -1,12 +1,12 @@
-backend:
-  name: git-gateway
-  branch: main
+ backend:
+    name: git-gateway
+    branch: main
 
-site_url: https://ehab-guitarrista-netlify-v1.vercel.app
-display_url: https://ehab-guitarrista-netlify-v1.vercel.app
+  site_url: https://ehab-guitarrista-netlify-v1.vercel.app
+  display_url: https://ehab-guitarrista-netlify-v1.vercel.app
 
-media_folder: "public/lovable-uploads"
-public_folder: "/lovable-uploads"
+  media_folder: "public/lovable-uploads"
+  public_folder: "/lovable-uploads"
 
 collections:
   - name: "site-content"
