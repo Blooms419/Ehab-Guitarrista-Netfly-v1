@@ -1,0 +1,132 @@
+backend:
+  name: git-gateway
+  branch: main
+
+site_url: https://ehabguitarrista.netlify.app
+display_url: https://ehabguitarrista.netlify.app
+
+media_folder: "public/lovable-uploads"
+public_folder: "/lovable-uploads"
+
+collections:
+  - name: "site-content"
+    label: "Site Content"
+    files:
+      - file: "src/data/content.json"
+        label: "Main Content"
+        name: "content"
+        fields:
+          - label: "Hero Section"
+            name: "hero"
+            widget: "object"
+            fields:
+              - label: "Main Title"
+                name: "title"
+                widget: "string"
+                default: "Ehab Guitarrista"
+              - label: "Subtitle"
+                name: "subtitle"
+                widget: "string"
+                default: "Bringing Music to Life Across Canada"
+              - label: "Hero Image"
+                name: "image"
+                widget: "image"
+                default: "/lovable-uploads/9c285a1d-9ff7-4834-a42f-2b0115d824b9.png"
+              - label: "Book Performance Button Text"
+                name: "bookButtonText"
+                widget: "string"
+                default: "Book Performance"
+              - label: "Listen Button Text"
+                name: "listenButtonText"
+                widget: "string"
+                default: "Listen Now"
+                
+          - label: "About Section"
+            name: "about"
+            widget: "object"
+            fields:
+              - label: "Section Title"
+                name: "title"
+                widget: "string"
+                default: "About Ehab"
+              - label: "Description"
+                name: "description"
+                widget: "text"
+                default: "Ehab Guitarrista is a versatile musician and performer based in Canada, bringing authentic musical experiences to audiences across the country."
+              - label: "Profile Image"
+                name: "image"
+                widget: "image"
+                default: "/lovable-uploads/profile-image.jpg"
+                
+          - label: "Contact Section"
+            name: "contact"
+            widget: "object"
+            fields:
+              - label: "Section Title"
+                name: "title"
+                widget: "string"
+                default: "Get in Touch"
+              - label: "Description"
+                name: "description"
+                widget: "text"
+                default: "Ready to bring exceptional music to your event? Let's discuss how we can make your occasion unforgettable."
+              - label: "Email"
+                name: "email"
+                widget: "string"
+                default: "contact@ehabguitarrista.com"
+              - label: "Phone"
+                name: "phone"
+                widget: "string"
+                default: "+1 (555) 123-4567"
+                
+  - name: "gallery"
+    label: "Gallery Images"
+    folder: "src/data/gallery"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - label: "Title"
+        name: "title"
+        widget: "string"
+      - label: "Image"
+        name: "image"
+        widget: "image"
+      - label: "Alt Text"
+        name: "alt"
+        widget: "string"
+      - label: "Order"
+        name: "order"
+        widget: "number"
+        default: 1
+        
+  - name: "performances"
+    label: "Performance Videos"
+    folder: "src/data/performances"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - label: "Title"
+        name: "title"
+        widget: "string"
+      - label: "Description"
+        name: "description"
+        widget: "text"
+      - label: "Video File"
+        name: "video"
+        widget: "file"
+        media_library:
+          config:
+            multiple: false
+      - label: "Thumbnail Image"
+        name: "thumbnail"
+        widget: "image"
+        required: false
+      - label: "Order"
+        name: "order"
+        widget: "number"
+        default: 1
+      - label: "Featured"
+        name: "featured"
+        widget: "boolean"
+        default: false
+        hint: "Show this video prominently on the site"
